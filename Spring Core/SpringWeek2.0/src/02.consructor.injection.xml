@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+      <bean id="person1" class="_02.consructor.injection.Person">
+         <constructor-arg name="name" value="inayet"/>
+         <constructor-arg name="surname" value="saglam"/>
+         <constructor-arg name="age" value="45"/>
+      </bean>
+      
+      
+       <bean id="adress2" class="_02.consructor.injection.Adress">
+         <constructor-arg name="ikamet" value="Hatay"/>
+         <constructor-arg name="no" value="80"/>
+      </bean>
+      
+      <bean id="person2" class="_02.consructor.injection.Person">
+         <constructor-arg name="name" value="huseyin"/>
+         <constructor-arg name="surname" value="saglam"/>
+         <constructor-arg name="age" value="25"/>
+         <constructor-arg name="adress" ref="adress2"/>
+      </bean>
+      
+      
+        <bean id="consructorconfuse1" class="_02.consructor.injection.ConsructorConfuse">
+         <constructor-arg  value="20"/>
+         
+      </bean>
+      
+      
+      
+        <bean id="consructorconfuse2" class="_02.consructor.injection.ConsructorConfuse">
+         <constructor-arg type="int" value="20"/>
+         
+      </bean>
+      
+      
+
+
+</beans>

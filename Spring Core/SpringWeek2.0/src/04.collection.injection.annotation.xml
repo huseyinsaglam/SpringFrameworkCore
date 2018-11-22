@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd ">
+
+
+	<!-- spring e , ilgili paket bilgisini verdik birden fazla package icin araya virgul koyabiliriz.
+	 ilgili paketlerde @Component , @Controller @Repository @Service @Resource @Inject @Value vs @Autowired
+	 
+	 bu annotationlari ilgili pakette yer alan siniflarda ara bul gerekli dependencyleri hallet anlamina gelmektedir!
+	 -->
+	<context:component-scan base-package="_04.collection.injection.Annotation"/>
+
+	<util:list id="utilAnnotationList">
+		<value>element1</value>
+		<value>element2</value>
+	</util:list>
+
+	<util:set id="utilAnnotationSet">
+		<value type="int">100</value>
+		<value type="int">200</value>
+	</util:set>
+
+	<util:map id="utilAnnotationMap">
+		<entry key="key1">
+			<value>1000</value>
+		</entry>
+
+		<entry key="key2">
+			<value>2000</value>
+		</entry>
+	</util:map>
+
+</beans>

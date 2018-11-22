@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+      <bean id="Collectioninjection" class="_03.collection.injection.CollectioninjectionModel">
+      
+           <property name="namelist">
+              <list>
+                 <value>huseyin</value>
+                 <value>nevin</value>
+                 <value>merve</value>
+              </list>  
+           </property>
+           
+           <property name="studentlist">
+           
+                <list>     
+                    <bean id="studentlist1" class="_03.collection.injection.Student">
+                     <property name="name" value="rahmi"/>
+                      <property name="age" value="50"/>
+                     </bean>         
+                     <ref bean="studentlist2"/>      
+                </list>
+                       
+           </property>
+           
+           <property name="maplist">
+                <map>
+                  <entry key="ericson" value="5000"></entry>
+                  <entry key="sony" value="50000"></entry>
+                </map>  
+           </property>
+      
+      </bean>
+  <!-- ***************************************************** -->    
+     <bean id="studentlist2" class="_03.collection.injection.Student"> 
+       <property name="name" value="ali"/>
+       <property name="age" value="30"/>
+  
+     </bean>
+    <!-- ***************************************************** -->       
+     <bean id="student3" class="_03.collection.injection.Student">
+     
+        <property name="name" value="tekin"></property>     
+        <property name="age" value="40"></property>     
+     
+     </bean>
+    <!-- ***************************************************** -->    
+      </beans>
